@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool playerCreated;
     public float speed = 5.0f;
     private const string AXIS_H = "Horizontal";
     private const string AXIS_V = "Vertical";
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private const string AXIS_LAST_H = "LastHorizontal";
     private bool walking = false;
     public Vector2 lastMovement = Vector2.zero;
+
+    public string nextUuid;
+
     private Rigidbody2D _rigibody;
     private Animator _animator;
 
@@ -18,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         this._animator = GetComponent<Animator>();
         this._rigibody = GetComponent<Rigidbody2D>();
+        playerCreated = true;
     }
 
     private void Update()
