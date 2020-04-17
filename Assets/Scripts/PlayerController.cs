@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             //Vector3 translation = new Vector3(Input.GetAxisRaw(AXIS_H) * this.speed * Time.deltaTime, 0, 0);
             //this.transform.Translate(translation);
-            _rigibody.velocity = new Vector2(Input.GetAxisRaw(AXIS_H) * this.speed, 0);
+            _rigibody.velocity = new Vector2(Input.GetAxisRaw(AXIS_H), 0).normalized * this.speed;
             this.walking = true;
             this.lastMovement = new Vector2(Input.GetAxisRaw(AXIS_H), 0);
         }
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             //Vector3 translation = new Vector3(0, Input.GetAxisRaw(AXIS_V) * this.speed * Time.deltaTime, 0);
             //this.transform.Translate(translation);
-            _rigibody.velocity = new Vector2(0, Input.GetAxisRaw(AXIS_V) * this.speed);
+            _rigibody.velocity = new Vector2(0, Input.GetAxisRaw(AXIS_V)).normalized * this.speed;
             this.lastMovement = new Vector2(0, Input.GetAxisRaw(AXIS_V));
             this.walking = true;
         }
