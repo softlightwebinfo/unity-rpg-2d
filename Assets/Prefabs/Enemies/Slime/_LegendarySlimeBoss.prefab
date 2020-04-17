@@ -75,7 +75,17 @@ PrefabInstance:
     - target: {fileID: 3349125853725644091, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}
       propertyPath: m_Name
-      value: LegendarySlimeBoss
+      value: _LegendarySlimeBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387281794598508129, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: timeBetweenSteps
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387281794598508129, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: speed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe613768c2f294d7c89980fbbb677e64, type: 3}
