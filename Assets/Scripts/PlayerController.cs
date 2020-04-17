@@ -10,7 +10,13 @@ public class PlayerController : MonoBehaviour
     private const string AXIS_V = "Vertical";
     private const string AXIS_LAST_V = "LastVertical";
     private const string AXIS_LAST_H = "LastHorizontal";
+    private const string ATTACK = "Attacking";
     private bool walking = false;
+    private bool attacking = false;
+
+    public float attackTime;
+    private float attackTimeCounter;
+
     public Vector2 lastMovement = Vector2.zero;
 
     public string nextUuid;
@@ -28,6 +34,23 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         this.walking = false;
+
+        if (attacking)
+        {
+            attackTimeCounter -= Time.deltaTime;
+            if (attackTimeCounter < 0)
+            {
+                attacking = false;
+                _animator.SetBool(ATTACK, false);
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            this.attacking = true;
+            attackTimeCounter = attackTime;
+            _rigibody.velocity = Vector2.zero;
+            _animator.SetBool(ATTACK, true);
+        }
 
         if (Mathf.Abs(Input.GetAxisRaw(AXIS_H)) > 0.2f)
         {
