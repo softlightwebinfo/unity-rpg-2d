@@ -9,3 +9,7 @@
 ### Example
 - HO_Castle -> house - outside - (name)
 - T_village
+
+## Tareas
+- Hacer que cuando  pulsas encima de un enemigo, el personaje vaya directo hacia el.
+- Si el enemigo te vee, que persiga al jugador y ataque

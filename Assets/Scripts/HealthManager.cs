@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [Header("Flash")]
+    [Header("Health")]
     public int maxHealth;
     [SerializeField]
     private int currentHealth;
@@ -15,6 +15,8 @@ public class HealthManager : MonoBehaviour
     private float flashCounter;
     private SpriteRenderer _characterRenderer;
 
+    [Header("Experience")]
+    public int expWhenDefeated;
 
     public int Health
     {
@@ -59,6 +61,13 @@ public class HealthManager : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            if (gameObject.tag.Equals("Enemy"))
+            {
+                GameObject.Find("Player")
+                    .GetComponent<CharacterStats>()
+                    .AddExperience(expWhenDefeated);
+            }
+
             gameObject.SetActive(false);
         }
 

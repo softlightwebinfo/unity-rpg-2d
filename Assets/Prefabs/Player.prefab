@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 4667620459866398977}
   - component: {fileID: 1769945182}
   - component: {fileID: 2400859845239046690}
+  - component: {fileID: 1769945183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -265,6 +266,28 @@ MonoBehaviour:
   currentHealth: 0
   flashActive: 0
   flashLength: 0.5
+  expWhenDefeated: 0
+--- !u!114 &1769945183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667620459866399032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c964354a7f0f142cba508a4e33521138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  exp: 0
+  expToLevelUp: 0000000064000000fa0000009a010000580200008403000078050000d0070000b80b000094110000
+  hpLevels: 6400000096000000d20000000e0100004f0100009a010000f401000058020000b202000007030000
+  strengthLevels: 00000000010000000200000005000000080000000c0000000d000000120000001400000016000000
+  defenseLevels: 000000000100000002000000030000000500000007000000090000000c0000000f00000014000000
+  speedLevels: 000000000100000002000000060000000700000008000000090000000c0000000d0000000e000000
+  luckLevels: 00000000010000000a00000004000000070000000a0000000f000000120000001e00000016000000
+  accuracyLevels: 32000000320000003400000035000000370000003a0000003c0000003e0000004100000041000000
 --- !u!1001 &4132554688765624740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 4739674399547218220, guid: 2b1cbbf9a157f4116a846f23dab51c51,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b1cbbf9a157f4116a846f23dab51c51, type: 3}
@@ -536,7 +559,7 @@ PrefabInstance:
     - target: {fileID: 7479838335291927579, guid: 22f0beda1e58c4df7ab7c290515393dd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479838335291927580, guid: 22f0beda1e58c4df7ab7c290515393dd,
         type: 3}

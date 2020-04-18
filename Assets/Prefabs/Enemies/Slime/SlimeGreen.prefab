@@ -86,5 +86,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2806955131513711001, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: damage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283716212739118002, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4, type: 3}

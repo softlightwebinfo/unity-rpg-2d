@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 506002279}
   - component: {fileID: 2806955131513711001}
   - component: {fileID: 1773315571}
+  - component: {fileID: 4283716212739118002}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -186,5 +187,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f56a3e3c08e4107b7c75d55b261c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 30
   currentHealth: 0
+  flashActive: 0
+  flashLength: 0
+  expWhenDefeated: 10
+--- !u!114 &4283716212739118002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105965297105451069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c964354a7f0f142cba508a4e33521138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+  expToLevelUp: 
+  hpLevels: 0a0000001400000032000000
+  strengthLevels: 0a0000000f00000019000000
+  defenseLevels: 000000000a00000019000000
+  speedLevels: 000000000a00000014000000
+  luckLevels: 00000000050000000a000000
+  accuracyLevels: 05000000080000000a000000

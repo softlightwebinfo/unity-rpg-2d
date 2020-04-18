@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: _LegendarySlimeBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 3387281792811354357, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3387281794598508129, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}
       propertyPath: timeBetweenSteps
