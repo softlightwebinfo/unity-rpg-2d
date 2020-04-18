@@ -2825,6 +2825,8 @@ GameObject:
   - component: {fileID: 852296943}
   - component: {fileID: 852296942}
   - component: {fileID: 852296941}
+  - component: {fileID: 852296945}
+  - component: {fileID: 852296946}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2913,6 +2915,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &852296945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852296940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3146bd778d8746ecaddabfa422b9157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthBar: {fileID: 1062309854}
+  playerHealthText: {fileID: 1485152111}
+  playerHealthManager: {fileID: 1769945182}
+  playerManaBar: {fileID: 1448090592}
+  playerManaText: {fileID: 54061269}
+--- !u!114 &852296946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852296940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281f8a291af5b4cf89f419d6ff6405bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &878567130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40339,21 +40370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 105965297105451056, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.039604187
-      objectReference: {fileID: 0}
-    - target: {fileID: 105965297105451056, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.38859558
-      objectReference: {fileID: 0}
-    - target: {fileID: 105965297105451057, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 105965297105451059, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40915,26 +40931,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4667620461630298469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1773315570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 105965297105451069, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1312503699}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1773315571
+--- !u!114 &1769945182 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2400859845239046690, guid: 6dac88f3e3bb04d15968f7b57f22b1eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 4667620461630298469}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773315570}
+  m_GameObject: {fileID: 1769945181}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7f56a3e3c08e4107b7c75d55b261c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
-  currentHealth: 0
 --- !u!1 &1780207996
 GameObject:
   m_ObjectHideFlags: 0
@@ -69195,14 +69203,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 848304038, guid: 6dac88f3e3bb04d15968f7b57f22b1eb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848304038, guid: 6dac88f3e3bb04d15968f7b57f22b1eb, type: 3}
-      propertyPath: m_Name
-      value: HitPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 4667620459866399032, guid: 6dac88f3e3bb04d15968f7b57f22b1eb,
         type: 3}
       propertyPath: m_Name

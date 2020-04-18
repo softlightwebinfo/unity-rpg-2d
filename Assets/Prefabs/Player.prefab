@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848304039}
   m_Layer: 0
-  m_Name: SwingPoint
+  m_Name: HitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  canMove: 1
   attackTime: 0.6
   lastMovement: {x: 0, y: 0}
   nextUuid: 
@@ -262,6 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  flashActive: 0
+  flashLength: 0.5
 --- !u!1001 &4132554688765624740
 PrefabInstance:
   m_ObjectHideFlags: 0

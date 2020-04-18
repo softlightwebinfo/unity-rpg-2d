@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private const string ATTACK = "Attacking";
     private bool walking = false;
     private bool attacking = false;
-
+    public bool canMove = true;
     public float attackTime;
     private float attackTimeCounter;
 
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         this.walking = false;
+        if (!canMove) return;
 
         if (attacking)
         {

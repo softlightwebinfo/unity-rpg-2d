@@ -11,11 +11,15 @@ public class DamagePlayer : MonoBehaviour
      private GameObject thePlayer;
      */
     public int damage;
+    public GameObject canvasDamage;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag.Equals("Player"))
         {
+            var clone = (GameObject)Instantiate(canvasDamage, collision.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<DamageNumber>().damagePoints = damage;
+
             collision.gameObject
                 .GetComponent<HealthManager>()
                 .DamageCharacter(this.damage);
