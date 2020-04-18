@@ -40109,7 +40109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f56a3e3c08e4107b7c75d55b261c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 150
   currentHealth: 0
 --- !u!1 &1806253073
 GameObject:
@@ -68269,6 +68269,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 848304038, guid: 6dac88f3e3bb04d15968f7b57f22b1eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 848304038, guid: 6dac88f3e3bb04d15968f7b57f22b1eb, type: 3}
+      propertyPath: m_Name
+      value: HitPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4667620459866399032, guid: 6dac88f3e3bb04d15968f7b57f22b1eb,
         type: 3}
       propertyPath: m_Name
