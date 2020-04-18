@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3435341407895658061}
+  - component: {fileID: 1839367876526608168}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -58,12 +59,25 @@ Transform:
   m_LocalPosition: {x: 0.37, y: -0.301, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1220935733}
   - {fileID: 9039096589311369515}
+  - {fileID: 1220935733}
   - {fileID: 2085241165206023175}
   m_Father: {fileID: 4667620459866399034}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839367876526608168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222166663913177892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6811101f3374476f9f2db80f8a20358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeWeapon: 0
 --- !u!1 &4667620459866399032
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f56a3e3c08e4107b7c75d55b261c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 0
   currentHealth: 0
   flashActive: 0
   flashLength: 0.5
@@ -281,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   exp: 0
-  expToLevelUp: 0000000064000000fa0000009a010000580200008403000078050000d0070000b80b000094110000
+  expToLevelUp: 000000000a00000019000000320000005a0000009600000022010000f401000084030000dc050000
   hpLevels: 6400000096000000d20000000e0100004f0100009a010000f401000058020000b202000007030000
   strengthLevels: 00000000010000000200000005000000080000000c0000000d000000120000001400000016000000
   defenseLevels: 000000000100000002000000030000000500000007000000090000000c0000000f00000014000000
@@ -339,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 4132554689692959121, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4132554689692959121, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
@@ -364,7 +378,7 @@ PrefabInstance:
     - target: {fileID: 4132554689692959126, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6669146859367923068, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
@@ -424,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 4739674399547218219, guid: 2b1cbbf9a157f4116a846f23dab51c51,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4739674399547218219, guid: 2b1cbbf9a157f4116a846f23dab51c51,
         type: 3}
@@ -559,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 7479838335291927579, guid: 22f0beda1e58c4df7ab7c290515393dd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7479838335291927580, guid: 22f0beda1e58c4df7ab7c290515393dd,
         type: 3}

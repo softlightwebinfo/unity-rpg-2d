@@ -25,10 +25,19 @@ public class UIManager : MonoBehaviour
     [Header("Avatar")]
     public Image playerAvatar;
 
+    [Header("Inventory")]
+    public GameObject inventoryPanel;
+    public Button inventoryButton;
+
     private void Update()
     {
         this.BuildHealthBar();
         this.BuildLevelBar();
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            this.ToggleInventory();
+        }
     }
 
     private void BuildHealthBar()
@@ -56,5 +65,37 @@ public class UIManager : MonoBehaviour
         playerExpBar.maxValue = playerStats.expToLevelUp[playerStats.level];
         playerExpBar.minValue = playerStats.expToLevelUp[playerStats.level - 1];
         playerExpBar.value = playerStats.exp;
+    }
+
+    public void ToggleInventory()
+    {
+        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+        if (inventoryPanel.activeInHierarchy)
+        {
+            foreach (Transform t in inventoryPanel.transform)
+            {
+                Destroy(t.gameObject);
+            }
+            this.FillInventory();
+        }
+    }
+
+    public void FillInventory()
+    {
+        WeaponManager manager = FindObjectOfType<WeaponManager>();
+        List<GameObject> weapons = manager.GetAllWeapons();
+
+        int i = 0;
+        foreach (GameObject w in weapons)
+        {
+            Button tempB = Instantiate(inventoryButton, inventoryPanel.transform);
+            InventoryButton inv = tempB.GetComponent<InventoryButton>();
+            inv.type = InventoryButton.ItemType.WEAPON;
+            inv.itemIdx = i;
+
+            tempB.onClick.AddListener(() => inv.ActivateButton());
+            tempB.transform.Find("Image").GetComponent<Image>().sprite = w.GetComponent<SpriteRenderer>().sprite;
+            i++;
+        }
     }
 }
