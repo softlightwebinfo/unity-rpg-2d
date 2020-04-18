@@ -35,5 +35,11 @@ public class WeaponManager : MonoBehaviour
         }
         weapons[newWeapon].SetActive(true);
         activeWeapon = newWeapon;
+
+        if (activeWeapon > -1)
+        {
+            FindObjectOfType<UIManager>()
+                .ChangeWeaponAvatarImage(weapons[activeWeapon].GetComponent<SpriteRenderer>().sprite);
+        }
     }
 }

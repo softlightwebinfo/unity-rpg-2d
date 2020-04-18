@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
-    public enum ItemType { WEAPON, ITEM, ARMOR, RING };
+    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3 };
     public int itemIdx;
     public ItemType type;
 

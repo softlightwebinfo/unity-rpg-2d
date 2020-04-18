@@ -25,14 +25,26 @@ public class UIManager : MonoBehaviour
     [Header("Avatar")]
     public Image playerAvatar;
 
+    [Header("Weapon")]
+    public Image playerWeapon;
+
     [Header("Inventory")]
     public GameObject inventoryPanel;
     public Button inventoryButton;
+    public GameObject inventoryPanelGroup;
+
+    private WeaponManager _weaponManager;
+
+    private void Start()
+    {
+        this.inventoryPanelGroup.SetActive(false);
+        this._weaponManager = FindObjectOfType<WeaponManager>();
+    }
 
     private void Update()
     {
-        this.BuildHealthBar();
-        this.BuildLevelBar();
+        this.HealthChanged();
+        this.LevelChanged();
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -40,7 +52,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void BuildHealthBar()
+    public void HealthChanged()
     {
         playerHealthBar.maxValue = playerHealthManager.maxHealth;
         playerHealthBar.value = playerHealthManager.Health;
@@ -54,7 +66,7 @@ public class UIManager : MonoBehaviour
         playerHealthText.text = stringBuilder.ToString();
     }
 
-    private void BuildLevelBar()
+    private void LevelChanged()
     {
         playerLevelText.text = $"Nivel {playerStats.level}";
         if (playerStats.level >= playerStats.expToLevelUp.Length)
@@ -69,7 +81,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleInventory()
     {
-        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+        inventoryPanelGroup.SetActive(!inventoryPanelGroup.activeInHierarchy);
         if (inventoryPanel.activeInHierarchy)
         {
             foreach (Transform t in inventoryPanel.transform)
@@ -82,8 +94,7 @@ public class UIManager : MonoBehaviour
 
     public void FillInventory()
     {
-        WeaponManager manager = FindObjectOfType<WeaponManager>();
-        List<GameObject> weapons = manager.GetAllWeapons();
+        List<GameObject> weapons = _weaponManager.GetAllWeapons();
 
         int i = 0;
         foreach (GameObject w in weapons)
@@ -97,5 +108,27 @@ public class UIManager : MonoBehaviour
             tempB.transform.Find("Image").GetComponent<Image>().sprite = w.GetComponent<SpriteRenderer>().sprite;
             i++;
         }
+    }
+
+    public void ShowOnly(int type)
+    {
+        foreach (Transform t in inventoryPanel.transform)
+        {
+            t.gameObject.SetActive((int)t.GetComponent<InventoryButton>().type == type);
+        }
+    }
+
+    public void ShowAll()
+    {
+        foreach (Transform t in inventoryPanel.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+    }
+
+    public void ChangeWeaponAvatarImage(Sprite sprite)
+    {
+        this.playerWeapon.sprite = sprite;
+        this.playerWeapon.enabled = true;
     }
 }
