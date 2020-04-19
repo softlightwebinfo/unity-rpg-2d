@@ -21,8 +21,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
       propertyPath: npcDialogueLines.Array.data[2]
-      value: Se fue de acampada pero aun no volvio.
+      value: "Se fue de acampada pero aun no volvio, y no se donde estar\xE1."
       objectReference: {fileID: 0}
+    - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
+      propertyPath: npcSprite
+      value: 
+      objectReference: {fileID: 5930228656100457789, guid: 629f2b717ff6a472ca76f683d0588803,
+        type: 3}
     - target: {fileID: 2091567456, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -108,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 4614967344414764388, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
       propertyPath: m_Name
-      value: NPCMan
+      value: NPCMan Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7001559411198091311, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
