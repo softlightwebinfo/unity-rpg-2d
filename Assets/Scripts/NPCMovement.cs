@@ -6,6 +6,7 @@ public class NPCMovement : MonoBehaviour
 {
     public float speed = 1.5f;
     public bool isWalking = false;
+    public bool isTalking = false;
     public float walkTime = 1.5f;
     public float waitTime = 4.0f;
     public BoxCollider2D villagerZone;
@@ -17,6 +18,9 @@ public class NPCMovement : MonoBehaviour
         Vector2.left,
         Vector2.right
     };
+
+    private DialogueManager dialogueManager;
+
     private int currentDirection;
     private Rigidbody2D _rigidbody;
     private float walkCounter;
@@ -26,12 +30,21 @@ public class NPCMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
         waitCounter = waitTime;
         walkCounter = walkTime;
+        isTalking = false;
     }
 
     private void FixedUpdate()
     {
+        if (isTalking)
+        {
+            isTalking = dialogueManager.dialogueActive;
+            StopWalking();
+            return;
+        }
+
         if (isWalking)
         {
             if (this.transform.position.x < villagerZone.bounds.min.x ||

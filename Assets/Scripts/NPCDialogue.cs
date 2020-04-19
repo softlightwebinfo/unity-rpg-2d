@@ -43,7 +43,7 @@ public class NPCDialogue : MonoBehaviour
             int i = 0;
             foreach (string line in npcDialogueLines)
             {
-                finalDialogue[i++] = npcName != null ? $"{npcName}:\n{line}" : line;
+                finalDialogue[i++] = npcName != null ? $"{npcName}\n{line}" : line;
             }
 
             if (npcSprite)
@@ -53,6 +53,11 @@ public class NPCDialogue : MonoBehaviour
             else
             {
                 dialogueManager.ShowDialogue(finalDialogue);
+            }
+
+            if (gameObject.GetComponentInParent<NPCMovement>())
+            {
+                gameObject.GetComponentInParent<NPCMovement>().isTalking = true;
             }
         }
     }

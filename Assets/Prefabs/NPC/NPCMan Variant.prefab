@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
+      propertyPath: npcName
+      value: Manolo
+      objectReference: {fileID: 0}
+    - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
+      propertyPath: npcDialogueLines.Array.data[0]
+      value: Soy el anciano Manolo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
+      propertyPath: npcDialogueLines.Array.data[1]
+      value: Estoy buscando a mi nieto.
+      objectReference: {fileID: 0}
+    - target: {fileID: 831785432, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
+      propertyPath: npcDialogueLines.Array.data[2]
+      value: Se fue de acampada pero aun no volvio.
+      objectReference: {fileID: 0}
     - target: {fileID: 2091567456, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -17,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2091567457, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
       propertyPath: m_Mass
-      value: 0.0001
+      value: 0.616781
       objectReference: {fileID: 0}
     - target: {fileID: 2091567457, guid: ddb7b09608fc845b8a3ec161db28111a, type: 3}
       propertyPath: m_LinearDrag
@@ -41,17 +57,17 @@ PrefabInstance:
     - target: {fileID: 4614967344414764377, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4614967344414764377, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4614967344414764377, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4614967344414764377, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
@@ -92,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 4614967344414764388, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}
       propertyPath: m_Name
-      value: NPCMan Variant
+      value: NPCMan
       objectReference: {fileID: 0}
     - target: {fileID: 7001559411198091311, guid: ddb7b09608fc845b8a3ec161db28111a,
         type: 3}

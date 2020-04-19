@@ -13,10 +13,13 @@ public class DialogueManager : MonoBehaviour
     public string[] dialogueLines;
     public int currentDialogLine;
 
+    private PlayerController playerController;
+
     private void Start()
     {
         dialogBox.SetActive(false);
         dialogueActive = false;
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
@@ -30,6 +33,8 @@ public class DialogueManager : MonoBehaviour
                 currentDialogLine = 0;
                 dialogueActive = false;
                 avatarImage.enabled = false;
+                playerController.isTalking = false;
+
                 dialogBox.SetActive(false);
             }
             else
@@ -44,8 +49,9 @@ public class DialogueManager : MonoBehaviour
         currentDialogLine = 0;
         dialogueLines = lines;
         dialogueActive = true;
-        dialogBox.SetActive(true);
         dialogueText.text = dialogueLines[currentDialogLine];
+        playerController.isTalking = true;
+        dialogBox.SetActive(true);
     }
 
     public void ShowDialogue(string[] lines, Sprite sprite)

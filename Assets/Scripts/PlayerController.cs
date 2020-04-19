@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     public static bool playerCreated;
     public float speed = 5.0f;
+    public bool isTalking = false;
+
     private const string AXIS_H = "Horizontal";
     private const string AXIS_V = "Vertical";
     private const string AXIS_LAST_V = "LastVertical";
@@ -32,10 +34,17 @@ public class PlayerController : MonoBehaviour
         this._animator = GetComponent<Animator>();
         this._rigibody = GetComponent<Rigidbody2D>();
         playerCreated = true;
+        isTalking = false;
     }
 
     private void Update()
     {
+        if (isTalking)
+        {
+            _rigibody.velocity = Vector2.zero;
+            return;
+        }
+
         this.walking = false;
         if (!canMove) return;
 
