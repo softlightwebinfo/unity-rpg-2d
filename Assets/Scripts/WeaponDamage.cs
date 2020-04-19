@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour
 {
+    public string weaponName;
+
     [Tooltip("Cantidad de daño")]
     public int damage;
     public GameObject bloodAnim;

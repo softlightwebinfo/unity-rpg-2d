@@ -42,4 +42,9 @@ public class WeaponManager : MonoBehaviour
                 .ChangeWeaponAvatarImage(weapons[activeWeapon].GetComponent<SpriteRenderer>().sprite);
         }
     }
+
+    public WeaponDamage GetWeaponAt(int pos)
+    {
+        return weapons[pos].GetComponent<WeaponDamage>();
+    }
 }

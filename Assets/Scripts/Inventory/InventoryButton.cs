@@ -14,6 +14,7 @@ public class InventoryButton : MonoBehaviour
         {
             case ItemType.WEAPON:
                 FindObjectOfType<WeaponManager>().ChangeWeapon(itemIdx);
+                FindObjectOfType<UIManager>().inventoryText.text = FindObjectOfType<WeaponManager>().GetWeaponAt(itemIdx).weaponName;
                 break;
             case ItemType.ARMOR:
                 Debug.Log("En futuros DLCS...");
@@ -26,7 +27,7 @@ public class InventoryButton : MonoBehaviour
                 break;
             case ItemType.SPETIAL_ITEMS:
                 QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
-                Debug.Log(item.itemName);
+                FindObjectOfType<UIManager>().inventoryText.text = item.itemName;
                 break;
 
         }

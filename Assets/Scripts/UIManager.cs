@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanel;
     public Button inventoryButton;
     public GameObject inventoryPanelGroup;
+    public Text inventoryText;
 
     private WeaponManager _weaponManager;
     private ItemsManager itemsManager;
@@ -83,6 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        inventoryText.text = "";
         inventoryPanelGroup.SetActive(!inventoryPanelGroup.activeInHierarchy);
         if (inventoryPanel.activeInHierarchy)
         {

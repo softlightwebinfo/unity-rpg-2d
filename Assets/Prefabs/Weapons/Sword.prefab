@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90d8acd2335941ffa5264e323a16db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Espada de tu Papa
   damage: 10
   bloodAnim: {fileID: 6058356868994472012, guid: e00af16d0db1e448e9333e07147a4db3,
     type: 3}

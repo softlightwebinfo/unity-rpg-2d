@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: damage
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 417400253911213432, guid: 5ea9a3869f8904128be3eb5245c87101,
+        type: 3}
+      propertyPath: weaponName
+      value: Hacha del carnicero
+      objectReference: {fileID: 0}
     - target: {fileID: 4132554689692959120, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
       propertyPath: m_Sprite
