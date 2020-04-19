@@ -18,6 +18,9 @@ public class HealthManager : MonoBehaviour
     [Header("Experience")]
     public int expWhenDefeated;
 
+    private QuestEnemy quest;
+    private QuestManager questManager;
+
     public int Health
     {
         get { return currentHealth; }
@@ -26,6 +29,8 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         _characterRenderer = GetComponent<SpriteRenderer>();
+        quest = GetComponent<QuestEnemy>();
+        questManager = FindObjectOfType<QuestManager>();
         UpdateMaxHealth(maxHealth);
     }
 
@@ -66,6 +71,7 @@ public class HealthManager : MonoBehaviour
                 GameObject.Find("Player")
                     .GetComponent<CharacterStats>()
                     .AddExperience(expWhenDefeated);
+                questManager.enemyKilled = quest;
             }
 
             gameObject.SetActive(false);

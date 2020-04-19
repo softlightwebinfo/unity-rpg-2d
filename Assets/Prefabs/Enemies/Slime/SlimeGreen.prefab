@@ -66,6 +66,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 105965297105451059, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 105965297105451059, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 105965297105451059, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 105965297105451068, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
         type: 3}
       propertyPath: m_Color.r
@@ -85,6 +100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SlimeGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 275633112486641977, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
+        type: 3}
+      propertyPath: enemyName
+      value: Green Slime
       objectReference: {fileID: 0}
     - target: {fileID: 2806955131513711001, guid: 1f1d9aa4c78ee4b50b92060fec3d07e4,
         type: 3}

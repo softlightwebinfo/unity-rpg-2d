@@ -34,11 +34,13 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanelGroup;
 
     private WeaponManager _weaponManager;
+    private ItemsManager itemsManager;
 
     private void Start()
     {
         this.inventoryPanelGroup.SetActive(false);
         this._weaponManager = FindObjectOfType<WeaponManager>();
+        this.itemsManager = FindObjectOfType<ItemsManager>();
     }
 
     private void Update()
@@ -99,15 +101,28 @@ public class UIManager : MonoBehaviour
         int i = 0;
         foreach (GameObject w in weapons)
         {
-            Button tempB = Instantiate(inventoryButton, inventoryPanel.transform);
-            InventoryButton inv = tempB.GetComponent<InventoryButton>();
-            inv.type = InventoryButton.ItemType.WEAPON;
-            inv.itemIdx = i;
-
-            tempB.onClick.AddListener(() => inv.ActivateButton());
-            tempB.transform.Find("Image").GetComponent<Image>().sprite = w.GetComponent<SpriteRenderer>().sprite;
+            AddItemToInventory(w, InventoryButton.ItemType.WEAPON, i);
             i++;
         }
+
+        List<GameObject> keyItems = itemsManager.GetQuestItems();
+        i = 0;
+        foreach (GameObject item in keyItems)
+        {
+            AddItemToInventory(item, InventoryButton.ItemType.SPETIAL_ITEMS, i);
+            i++;
+        }
+    }
+
+    private void AddItemToInventory(GameObject item, InventoryButton.ItemType type, int pos)
+    {
+        Button tempB = Instantiate(inventoryButton, inventoryPanel.transform);
+        InventoryButton inv = tempB.GetComponent<InventoryButton>();
+        inv.type = type;
+        inv.itemIdx = pos;
+
+        tempB.onClick.AddListener(() => inv.ActivateButton());
+        tempB.transform.Find("Image").GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void ShowOnly(int type)

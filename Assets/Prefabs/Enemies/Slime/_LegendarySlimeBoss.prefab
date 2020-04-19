@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: damage
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3229419593563106367, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: enemyName
+      value: Legendary Slime
+      objectReference: {fileID: 0}
     - target: {fileID: 3349125853725644085, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,12 +75,37 @@ PrefabInstance:
     - target: {fileID: 3349125853725644085, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3349125853725644085, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349125853725644085, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349125853725644090, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349125853725644090, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6692307
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349125853725644090, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.24056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349125853725644090, guid: fe613768c2f294d7c89980fbbb677e64,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3349125853725644091, guid: fe613768c2f294d7c89980fbbb677e64,
         type: 3}

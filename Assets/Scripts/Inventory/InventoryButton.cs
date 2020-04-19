@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
-    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3 };
+    public enum ItemType { WEAPON = 0, ITEM = 1, ARMOR = 2, RING = 3, SPETIAL_ITEMS = 4 };
     public int itemIdx;
     public ItemType type;
 
@@ -24,6 +24,11 @@ public class InventoryButton : MonoBehaviour
             case ItemType.ITEM:
                 Debug.Log("En futuros DLCS...");
                 break;
+            case ItemType.SPETIAL_ITEMS:
+                QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
+                Debug.Log(item.itemName);
+                break;
+
         }
     }
 }
