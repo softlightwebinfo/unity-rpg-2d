@@ -24,6 +24,17 @@ public class HealthManager : MonoBehaviour
     public int Health
     {
         get { return currentHealth; }
+        set
+        {
+            if (value < 0)
+            {
+                currentHealth = 0;
+            }
+            else
+            {
+                currentHealth = value;
+            }
+        }
     }
 
     void Start()
@@ -65,7 +76,7 @@ public class HealthManager : MonoBehaviour
     {
         SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
 
-        currentHealth -= damage;
+        Health -= damage;
         if (currentHealth <= 0)
         {
             if (gameObject.tag.Equals("Enemy"))
@@ -105,6 +116,6 @@ public class HealthManager : MonoBehaviour
     public void UpdateMaxHealth(int newMaxHealth)
     {
         this.maxHealth = newMaxHealth;
-        this.currentHealth = maxHealth;
+        Health = maxHealth;
     }
 }

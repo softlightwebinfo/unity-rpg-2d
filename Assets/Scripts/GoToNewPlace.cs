@@ -18,7 +18,7 @@ public class GoToNewPlace : MonoBehaviour
     {
         if (name != "Player") return;
 
-        if (!needsClick || (needsClick && Input.GetMouseButtonDown(0)))
+        if (!needsClick || (needsClick && Input.GetMouseButtonDown(1)))
         {
             if (needsClick)
             {

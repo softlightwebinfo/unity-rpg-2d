@@ -34,12 +34,17 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanelGroup;
     public Text inventoryText;
 
+    [Header("Sounds Settings")]
+    public GameObject soundsSettingsPanel;
+    public Button sounsSettingsButton;
+
     private WeaponManager _weaponManager;
     private ItemsManager itemsManager;
 
     private void Start()
     {
         this.inventoryPanelGroup.SetActive(false);
+        ToggleVolumeSettings();
         this._weaponManager = FindObjectOfType<WeaponManager>();
         this.itemsManager = FindObjectOfType<ItemsManager>();
     }
@@ -147,5 +152,10 @@ public class UIManager : MonoBehaviour
     {
         this.playerWeapon.sprite = sprite;
         this.playerWeapon.enabled = true;
+    }
+
+    public void ToggleVolumeSettings()
+    {
+        this.soundsSettingsPanel.SetActive(!this.soundsSettingsPanel.activeInHierarchy);
     }
 }
