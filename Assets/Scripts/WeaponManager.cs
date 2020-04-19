@@ -4,28 +4,51 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    [Header("Weapon")]
     private List<GameObject> weapons;
     public int activeWeapon;
+
+    [Header("Armour")]
+    private List<GameObject> armors;
+    public int activeArmor;
+
+    [Header("Rings")]
+    private List<GameObject> rings;
+    public int activeRing1, activeRing2;
+
 
     public List<GameObject> GetAllWeapons()
     {
         return weapons;
     }
 
-    void Start()
+    public List<GameObject> GetAllArmors()
     {
-        this.weapons = new List<GameObject>();
-
-        foreach (Transform weapon in transform)
-        {
-            weapons.Add(weapon.gameObject);
-        }
-
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            weapons[i].SetActive(i == activeWeapon);
-        }
+        return armors;
     }
+
+    public List<GameObject> GetAllRings()
+    {
+        return rings;
+    }
+
+
+    public WeaponDamage GetWeaponAt(int pos)
+    {
+        return weapons[pos].GetComponent<WeaponDamage>();
+    }
+
+
+    public GameObject GetArmorAt(int pos)
+    {
+        return armors[pos];
+    }
+
+    public GameObject GetRingAt(int pos)
+    {
+        return rings[pos];
+    }
+
 
     public void ChangeWeapon(int newWeapon)
     {
@@ -43,8 +66,22 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public WeaponDamage GetWeaponAt(int pos)
+    void Start()
     {
-        return weapons[pos].GetComponent<WeaponDamage>();
+        this.weapons = new List<GameObject>();
+
+        foreach (Transform weapon in transform)
+        {
+            weapons.Add(weapon.gameObject);
+        }
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            weapons[i].SetActive(i == activeWeapon);
+        }
+
+        // TODO: Armours and rings
+        this.armors = new List<GameObject>();
+        this.rings = new List<GameObject>();
     }
 }

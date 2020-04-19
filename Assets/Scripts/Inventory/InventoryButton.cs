@@ -14,7 +14,6 @@ public class InventoryButton : MonoBehaviour
         {
             case ItemType.WEAPON:
                 FindObjectOfType<WeaponManager>().ChangeWeapon(itemIdx);
-                FindObjectOfType<UIManager>().inventoryText.text = FindObjectOfType<WeaponManager>().GetWeaponAt(itemIdx).weaponName;
                 break;
             case ItemType.ARMOR:
                 Debug.Log("En futuros DLCS...");
@@ -25,11 +24,40 @@ public class InventoryButton : MonoBehaviour
             case ItemType.ITEM:
                 Debug.Log("En futuros DLCS...");
                 break;
+        }
+        ShowDescription();
+    }
+
+    public void ClearDescription()
+    {
+        FindObjectOfType<UIManager>().inventoryText.text = "";
+        FindObjectOfType<UIManager>().inventoryText.transform.parent.transform.gameObject.SetActive(false);
+    }
+
+    public void ShowDescription()
+    {
+        string desc = "";
+        switch (type)
+        {
+            case ItemType.WEAPON:
+                desc = FindObjectOfType<WeaponManager>().GetWeaponAt(itemIdx).weaponName;
+                break;
+            case ItemType.ARMOR:
+                desc = FindObjectOfType<WeaponManager>().GetArmorAt(itemIdx).name;
+                break;
+            case ItemType.RING:
+                desc = FindObjectOfType<WeaponManager>().GetRingAt(itemIdx).name;
+                break;
+            case ItemType.ITEM:
+                desc = "Item consumible";
+                break;
             case ItemType.SPETIAL_ITEMS:
                 QuestItem item = FindObjectOfType<ItemsManager>().GetItemAt(itemIdx);
-                FindObjectOfType<UIManager>().inventoryText.text = item.itemName;
+                desc = item.itemName;
                 break;
 
         }
+        FindObjectOfType<UIManager>().inventoryText.text = desc;
+        FindObjectOfType<UIManager>().inventoryText.transform.parent.transform.gameObject.SetActive(true);
     }
 }

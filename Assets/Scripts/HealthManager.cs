@@ -63,6 +63,8 @@ public class HealthManager : MonoBehaviour
 
     public void DamageCharacter(int damage)
     {
+        SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.HIT);
+
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
@@ -72,6 +74,12 @@ public class HealthManager : MonoBehaviour
                     .GetComponent<CharacterStats>()
                     .AddExperience(expWhenDefeated);
                 questManager.enemyKilled = quest;
+            }
+
+            if (gameObject.tag.Equals("Player"))
+            {
+                SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.DIE);
+                // TODO: Implementar Game Over
             }
 
             gameObject.SetActive(false);

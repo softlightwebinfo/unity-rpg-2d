@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeWeapon: -1
+  activeArmor: 0
+  activeRing1: 0
+  activeRing2: 0
 --- !u!1 &4667620459866399032
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +363,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6058356868994472012, guid: e00af16d0db1e448e9333e07147a4db3,
         type: 3}
+    - target: {fileID: 417400253911213432, guid: 5ea9a3869f8904128be3eb5245c87101,
+        type: 3}
+      propertyPath: weaponName
+      value: Espada de Papa
+      objectReference: {fileID: 0}
     - target: {fileID: 4132554689692959121, guid: 5ea9a3869f8904128be3eb5245c87101,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 1674610327800204374, guid: d5de725bfb8ca4cac989d0a6f837ff1c,
         type: 3}
       propertyPath: damage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5de725bfb8ca4cac989d0a6f837ff1c, type: 3}

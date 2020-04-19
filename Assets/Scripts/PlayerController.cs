@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0))
         {
+            SFXManager.SharedInstance.PlaySFX(SFXType.SoundType.ATTACK);
             this.attacking = true;
             attackTimeCounter = attackTime;
             _rigibody.velocity = Vector2.zero;
